@@ -1,0 +1,227 @@
+html {
+    box-sizing: border-box;
+
+    body {
+        margin: 0;
+        background: skyblue;
+        z-index: -100;
+
+
+
+        .header {
+            background-color: #10293a;
+            padding: 0px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            h2 {
+                font-family: helvetica;
+                font-weight: 400;
+                color: white;
+                font-size: 35px;
+                text-transform: uppercase;
+                margin: 15px 0;
+            }
+
+            a {
+                color: #10293b;
+                background: white;
+                font-family: helvetica;
+                padding: 6px 12px;
+                border-radius: 3px;
+                text-decoration: none;
+                font-weight: 300;
+
+                &:hover {
+                    background: darken(white, 10%);
+                }
+            }
+        }
+
+        .input-container {
+            padding: 0 0 15px 0;
+            display: flex;
+            background: #10293a;
+            justify-content: center;
+
+
+
+            #submit-container {
+                background-color: transparent;
+
+                #weather-search {
+                    width: 240px;
+                    height: 30px;
+                    border: 2px solid white;
+                    background: transparent;
+                    color: white;
+                    padding-left: 10px;
+                    border-radius: 3px 0 0 3px;
+                    font-size: 14px;
+                    text-transform: capitalize;
+
+                    &:focus {
+                        outline: none;
+                        padding-left: 10px;
+
+                    }
+                }
+            }
+
+            #submit {
+                border: 2px solid white;
+                color: white;
+                border-left: none;
+                background: transparent;
+                transition: all 0.5s;
+                border-radius: 0 3px 3px 0;
+                font-size: 14px;
+                padding: 0 20px;
+
+
+                &:hover {
+                    outline-style: none;
+                    background: white;
+                    color: black;
+                    cursor: pointer;
+                }
+
+                &:focus {
+                    color: skyblue;
+                }
+
+            }
+
+            &__icon {
+                background-color: skyblue;
+                padding: 0 10px;
+
+                i {
+                    line-height: 32px;
+                }
+            }
+        }
+
+        .british-isles {
+            position: relative;
+
+            .map {
+                width: 90%;
+                height: 100%;
+                margin: -30px auto 0 auto;
+                display: block;
+            }
+
+            .locations {
+                background: #10293b7d;
+                padding: 10px 15px;
+                position: absolute;
+                border-radius: 3px;
+                color: white;
+                font-family: helvetica;
+                font-size: 13px;
+                cursor: pointer;
+            }
+
+            .manchester {
+                left: 43%;
+                top: 63%;
+            }
+
+            .edinburgh {
+                top: 42%;
+                left: 54%;
+            }
+
+            .belfast {
+                top: 53%;
+                left: 34%;
+            }
+
+            .cardiff {
+                top: 78%;
+                left: 41%;
+            }
+
+            .london {
+                top: 80%;
+                left: 62%;
+            }
+
+            .belfast {
+                top: 47%;
+                left: 22%;
+            }
+
+            .inverness {
+                top: 20%;
+                left: 30%;
+            }
+        }
+
+
+        #current {
+            color: white;
+            font-family: helvetica;
+            font-weight: 100;
+            margin: 0 30px;
+
+
+            h2 {
+                text-align: center;
+                font-weight: 100;
+                font-size: 36px;
+            }
+
+            h3 {
+                font-weight: 100;
+                font-size: 17px;
+                text-transform: capitalize;
+            }
+
+            .temp-container {
+                display: flex;
+                align-items: center;
+
+                .temp {
+                    font-size: 50px;
+                    margin: 10px 0;
+                    font-weight: 600;
+                }
+            }
+
+            .tile {
+                display: flex;
+                flex-wrap: wrap;
+                display: unset;
+
+
+
+                div {
+                    flex: 1 0 100%;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    padding: 10px 0;
+                    border-top: 1px solid white;
+                    display: flex;
+                    margin-top: 5px;
+                    justify-content: space-between;
+                    font-size: 22px;
+
+
+
+
+                    span {
+                        display: block;
+                        font-size: 22px;
+                    }
+                }
+            }
+
+            .clicked {
+                display: none;
+            }
+        }
+    }
+}

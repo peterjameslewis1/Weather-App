@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+  <div class="header">
+    <h2>PJ Weather</h2>
+  </div>
+  <div class="input-container">
+    <div id="submit-container">
+      <input type="text" name="weather-search" placeholder="Search City..." id="weather-search" />
+    </div>
+    <button type="submit" class="submit" id="submit"><i class="fas fa-search"></i></button>
+  </div>
+  <div class="registration"></div>
+  <section id="current">
+    <h2></h2>
+    <h3></h3>
+    <div class="temp-container">
+      <img src="" alt="" class="responsive-img">
+      <h3 class="temp"></h3>
+    </div>
+    <div class="tile">
+      <div class="feels-like"></div>
+      <div class="temp-min"></div>
+      <div class="temp-max"></div>
+      <div class="wind"></div>
+      <div class="humidity"></div>
+    </div>
+  </section>
+
+  <section id="hourly">
+
+  </section>
+
+  <div class="british-isles">
+    <img class="map" src="https://m.files.bbci.co.uk/modules/bbc-morph-wr-decorative-map/2.3.0/img/map.png" alt=""
+      class="responsive-img">
+    <a href="https://openweathermap.org/forecast5" class="manchester locations"> Manchester <i
+        class="fas fa-map-pin"></i></a>
+    <a href="#" class="edinburgh locations"><i class="fas fa-map-pin"></i> Edinburgh</a>
+    <a href="#" class="belfast locations">Belfast <i class="fas fa-map-pin"></i> </a>
+    <a href="#" class="cardiff locations">Cardiff <i class="fas fa-map-pin"></i></a>
+    <a href="#" class="london locations">London <i class="fas fa-map-pin"></i></a>
+    <a href="#" class="inverness locations">Inverness <i class="fas fa-map-pin"></i></a>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="https://kit.fontawesome.com/0841a5b684.js" crossorigin="anonymous"></script>
+
+</body>
+
+
+</html>

@@ -91,7 +91,7 @@ function y(data1) {
 const getWeather = document.querySelector('#submit').addEventListener('click', function () {
     // QuerySelectors
 
-    fetchCurrent(URLCurrent1);
+    fetchCurrent(URLClicked1);
     fetchHourly(URLForecast1);
 
 

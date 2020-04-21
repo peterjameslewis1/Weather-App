@@ -8,33 +8,30 @@ html body {
 }
 html body .header {
   background-color: #ec6e4b;
-  padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 0 20px 0;
+  height: 60px;
+  padding: 0 20px;
 }
-html body .header img {
-  width: 70px;
+html body .header .logo {
+  width: 50px;
+  margin-top: 5px;
+}
+html body .header .social i {
+  font-size: 30px;
 }
 html body .header a {
   cursor: pointer;
   text-decoration: none;
+  padding: 10px;
 }
 html body .header a i {
   color: white;
   font-size: 26px;
 }
-html body .header a h2 {
-  font-family: helvetica;
-  font-weight: 400;
-  color: white;
-  font-size: 35px;
-  text-transform: uppercase;
-  margin: 15px 0;
-}
 html body .input-container {
-  padding: 0 0 15px 0;
+  padding: 15px 0;
   display: flex;
   background: #10293b;
   justify-content: center;
@@ -74,15 +71,11 @@ html body .input-container #submit:focus {
   color: #10293b;
   cursor: pointer;
 }
-html body .input-container #submit:focus {
-  color: #10293b;
-  outline-style: none;
-}
-html body .input-container__icon {
+html body .input-container .input-container__icon {
   background-color: skyblue;
   padding: 0 10px;
 }
-html body .input-container__icon i {
+html body .input-container .input-container__icon i {
   line-height: 32px;
 }
 html body .british-isles {
@@ -135,7 +128,10 @@ html body #current {
   color: white;
   font-family: helvetica;
   font-weight: 100;
-  margin: 50px 30px 100px 30px;
+  margin: 20px 10px 100px 10px;
+  padding: 20px;
+  border: 1px solid #ec6e4b;
+  border-radius: 10px;
 }
 html body #current h2 {
   text-align: center;
@@ -185,6 +181,9 @@ html body #hourly {
   flex-wrap: wrap;
   align-items: center;
   background: #10293b;
+  border: 1px solid #ec6e4b;
+  border-radius: 10px;
+  margin: 10px;
 }
 html body #hourly .test-div {
   flex: 1 1 25%;

@@ -72,9 +72,9 @@ function x(data) {
     h3.innerHTML = `${data.weather[0].description}`;
     // img.src = `./images/${data.weather[0].icon}@2x.png`;
     temp.innerHTML = `${dataMain[0]}°`;
-    feelsLike.innerHTML = `Feels Like <span>${dataMain[1]}oC</span>`;
-    tempMin.innerHTML = `Low <span>${dataMain[2]}oC</span>`;
-    tempMax.innerHTML = `High <span>${dataMain[3]}oC</span>`;
+    feelsLike.innerHTML = `Feels Like <span>${dataMain[1]}°</span>`;
+    tempMin.innerHTML = `Low <span>${dataMain[2]}°</span>`;
+    tempMax.innerHTML = `High <span>${dataMain[3]}°</span>`;
     wind.innerHTML = `Wind speed <span>${data.wind.speed}mph</span>`;
     humidity.innerHTML = `Humidity <span>${dataMain[5]}%</span>`;
 };

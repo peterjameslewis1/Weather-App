@@ -12,41 +12,39 @@ html {
 
         .header {
             background-color: @accent-colour;
-            padding: 0px 30px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin: 0 0 20px 0;
+            height: 60px;
+            padding: 0 20px;
 
-            img {
-                width: 70px;
+            .logo {
+                width: 50px;
+                margin-top: 5px;
+            }
+
+            .social {
+                i {
+                    font-size: 30px;
+                }
             }
 
 
             a {
                 cursor: pointer;
                 text-decoration: none;
+                padding: 10px;
+
 
                 i {
                     color: @secondary-colour;
                     font-size: 26px;
                 }
-
-
-                h2 {
-                    font-family: @font-family;
-                    font-weight: 400;
-                    color: @secondary-colour;
-                    font-size: 35px;
-                    text-transform: uppercase;
-                    margin: 15px 0;
-
-                }
             }
         }
 
         .input-container {
-            padding: 0 0 15px 0;
+            padding: 15px 0;
             display: flex;
             background: @primary-colour;
             justify-content: center;
@@ -99,148 +97,156 @@ html {
                     line-height: 32px;
                 }
             }
+        }
 
-            .british-isles {
-                position: relative;
+        .british-isles {
+            position: relative;
 
-                .map {
-                    width: 90%;
-                    height: 100%;
-                    margin: -30px auto 0 auto;
-                    display: block;
-                }
-
-                .locations {
-                    background: #10293b7d;
-                    padding: 10px 15px;
-                    position: absolute;
-                    border-radius: 3px;
-                    color: @secondary-colour;
-                    font-family: @font-family;
-                    font-size: 13px;
-                    cursor: pointer;
-                    border: 1px solid @secondary-colour;
-                }
-
-                .manchester {
-                    left: 43%;
-                    top: 63%;
-                }
-
-                .edinburgh {
-                    top: 42%;
-                    left: 54%;
-                }
-
-                .belfast {
-                    top: 53%;
-                    left: 34%;
-                    top: 47%;
-                    left: 22%;
-                }
-
-                .cardiff {
-                    top: 78%;
-                    left: 41%;
-                }
-
-                .london {
-                    top: 80%;
-                    left: 62%;
-                }
-
-                .inverness {
-                    top: 20%;
-                    left: 30%;
-                }
+            .map {
+                width: 90%;
+                height: 100%;
+                margin: -30px auto 0 auto;
+                display: block;
             }
 
-            #current {
+            .locations {
+                background: #10293b7d;
+                padding: 10px 15px;
+                position: absolute;
+                border-radius: 3px;
                 color: @secondary-colour;
                 font-family: @font-family;
-                font-weight: 100;
-                margin: 50px 30px 100px 30px;
-
-                h2 {
-                    text-align: center;
-                    font-weight: 400;
-                    font-size: 36px;
-                }
-
-                h3 {
-                    font-weight: 100;
-                    font-size: 17px;
-                    text-transform: capitalize;
-                }
-
-                .temp-container {
-                    display: flex;
-                    align-items: center;
-
-                    .temp {
-                        font-size: 50px;
-                        margin: 10px 0;
-                        font-weight: 600;
-                    }
-                }
-
-                .tile {
-                    display: flex;
-                    flex-wrap: wrap;
-                    display: unset;
-
-                    div {
-                        flex: 1 0 100%;
-                        flex-direction: row;
-                        flex-wrap: wrap;
-                        padding: 10px 0;
-                        border-top: 1px solid @secondary-colour;
-                        display: flex;
-                        margin-top: 5px;
-                        justify-content: space-between;
-                        font-size: 22px;
-
-                        span {
-                            display: block;
-                            font-size: 22px;
-                        }
-                    }
-                }
-
-                .clicked {
-                    display: none;
-                }
+                font-size: 13px;
+                cursor: pointer;
+                border: 1px solid @secondary-colour;
             }
 
-            #hourly {
-                padding: 20px 20px;
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
-                background: #10293b;
-
-
-                .test-div {
-                    flex: 1 1 25%;
-                    color: @secondary-colour;
-                    font-family: @font-family;
-                    text-transform: capitalize;
-                    text-align: center;
-                }
-
-                .test-img {
-                    width: 80px;
-                }
-
+            .manchester {
+                left: 43%;
+                top: 63%;
             }
 
-            .hourly-header {
-                color: @secondary-colour;
-                text-align: center;
-                font-family: @font-family;
-                font-size: 36px;
-                font-weight: 400;
+            .edinburgh {
+                top: 42%;
+                left: 54%;
+            }
 
+            .belfast {
+                top: 53%;
+                left: 34%;
+                top: 47%;
+                left: 22%;
+            }
+
+            .cardiff {
+                top: 78%;
+                left: 41%;
+            }
+
+            .london {
+                top: 80%;
+                left: 62%;
+            }
+
+            .inverness {
+                top: 20%;
+                left: 30%;
             }
         }
+
+        #current {
+            color: @secondary-colour;
+            font-family: @font-family;
+            font-weight: 100;
+            margin: 20px 10px 100px 10px;
+            padding: 20px;
+            border: 1px solid #ec6e4b;
+            border-radius: 10px;
+
+            h2 {
+                text-align: center;
+                font-weight: 400;
+                font-size: 36px;
+            }
+
+            h3 {
+                font-weight: 100;
+                font-size: 17px;
+                text-transform: capitalize;
+            }
+
+            .temp-container {
+                display: flex;
+                align-items: center;
+
+                .temp {
+                    font-size: 50px;
+                    margin: 10px 0;
+                    font-weight: 600;
+                }
+            }
+
+            .tile {
+                display: flex;
+                flex-wrap: wrap;
+                display: unset;
+
+                div {
+                    flex: 1 0 100%;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    padding: 10px 0;
+                    border-top: 1px solid @secondary-colour;
+                    display: flex;
+                    margin-top: 5px;
+                    justify-content: space-between;
+                    font-size: 22px;
+
+                    span {
+                        display: block;
+                        font-size: 22px;
+                    }
+                }
+            }
+
+            .clicked {
+                display: none;
+            }
+        }
+
+        #hourly {
+            padding: 20px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            background: @primary-colour;
+            border: 1px solid @accent-colour;
+            border-radius: 10px;
+            margin: 10px;
+
+
+            .test-div {
+                flex: 1 1 25%;
+                color: @secondary-colour;
+                font-family: @font-family;
+                text-transform: capitalize;
+                text-align: center;
+            }
+
+            .test-img {
+                width: 80px;
+            }
+
+        }
+
+        .hourly-header {
+            color: @secondary-colour;
+            text-align: center;
+            font-family: @font-family;
+            font-size: 36px;
+            font-weight: 400;
+
+        }
+
     }
+}

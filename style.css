@@ -3,17 +3,29 @@ html {
 }
 html body {
   margin: 0;
-  background: skyblue;
+  background: #10293b;
   z-index: -100;
 }
 html body .header {
-  background-color: #10293a;
+  background-color: #ec6e4b;
   padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 0 0 20px 0;
 }
-html body .header h2 {
+html body .header img {
+  width: 70px;
+}
+html body .header a {
+  cursor: pointer;
+  text-decoration: none;
+}
+html body .header a i {
+  color: white;
+  font-size: 26px;
+}
+html body .header a h2 {
   font-family: helvetica;
   font-weight: 400;
   color: white;
@@ -21,22 +33,10 @@ html body .header h2 {
   text-transform: uppercase;
   margin: 15px 0;
 }
-html body .header a {
-  color: #10293b;
-  background: white;
-  font-family: helvetica;
-  padding: 6px 12px;
-  border-radius: 3px;
-  text-decoration: none;
-  font-weight: 300;
-}
-html body .header a:hover {
-  background: #e6e6e6;
-}
 html body .input-container {
   padding: 0 0 15px 0;
   display: flex;
-  background: #10293a;
+  background: #10293b;
   justify-content: center;
 }
 html body .input-container #submit-container {
@@ -45,9 +45,9 @@ html body .input-container #submit-container {
 html body .input-container #submit-container #weather-search {
   width: 240px;
   height: 30px;
-  border: 2px solid white;
+  border: 2px solid #ec6e4b;
   background: transparent;
-  color: white;
+  color: #ec6e4b;
   padding-left: 10px;
   border-radius: 3px 0 0 3px;
   font-size: 14px;
@@ -58,8 +58,8 @@ html body .input-container #submit-container #weather-search:focus {
   padding-left: 10px;
 }
 html body .input-container #submit {
-  border: 2px solid white;
-  color: white;
+  border: 2px solid #ec6e4b;
+  color: #ec6e4b;
   border-left: none;
   background: transparent;
   transition: all 0.5s;
@@ -67,14 +67,16 @@ html body .input-container #submit {
   font-size: 14px;
   padding: 0 20px;
 }
-html body .input-container #submit:hover {
+html body .input-container #submit:hover,
+html body .input-container #submit:focus {
   outline-style: none;
-  background: white;
-  color: black;
+  background: #ec6e4b;
+  color: #10293b;
   cursor: pointer;
 }
 html body .input-container #submit:focus {
-  color: skyblue;
+  color: #10293b;
+  outline-style: none;
 }
 html body .input-container__icon {
   background-color: skyblue;
@@ -101,6 +103,7 @@ html body .british-isles .locations {
   font-family: helvetica;
   font-size: 13px;
   cursor: pointer;
+  border: 1px solid white;
 }
 html body .british-isles .manchester {
   left: 43%;
@@ -113,6 +116,8 @@ html body .british-isles .edinburgh {
 html body .british-isles .belfast {
   top: 53%;
   left: 34%;
+  top: 47%;
+  left: 22%;
 }
 html body .british-isles .cardiff {
   top: 78%;
@@ -122,10 +127,6 @@ html body .british-isles .london {
   top: 80%;
   left: 62%;
 }
-html body .british-isles .belfast {
-  top: 47%;
-  left: 22%;
-}
 html body .british-isles .inverness {
   top: 20%;
   left: 30%;
@@ -134,11 +135,11 @@ html body #current {
   color: white;
   font-family: helvetica;
   font-weight: 100;
-  margin: 0 30px;
+  margin: 50px 30px 100px 30px;
 }
 html body #current h2 {
   text-align: center;
-  font-weight: 100;
+  font-weight: 400;
   font-size: 36px;
 }
 html body #current h3 {
@@ -177,4 +178,28 @@ html body #current .tile div span {
 }
 html body #current .clicked {
   display: none;
+}
+html body #hourly {
+  padding: 20px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background: #10293b;
+}
+html body #hourly .test-div {
+  flex: 1 1 25%;
+  color: white;
+  font-family: helvetica;
+  text-transform: capitalize;
+  text-align: center;
+}
+html body #hourly .test-img {
+  width: 80px;
+}
+html body .hourly-header {
+  color: white;
+  text-align: center;
+  font-family: helvetica;
+  font-size: 36px;
+  font-weight: 400;
 }

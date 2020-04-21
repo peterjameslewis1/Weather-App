@@ -61,9 +61,8 @@ html body .input-container #submit {
   background: transparent;
   transition: all 0.5s;
   border-radius: 0 3px 3px 0;
-  font-size: 14px;
   height: 36px;
-                width: 40px;
+  width: 40px;
 }
 html body .input-container #submit:hover,
 html body .input-container #submit:focus {
@@ -71,6 +70,9 @@ html body .input-container #submit:focus {
   background: #ec6e4b;
   color: #10293b;
   cursor: pointer;
+}
+html body .input-container #submit i {
+  font-size: 14px;
 }
 html body .input-container .input-container__icon {
   background-color: skyblue;

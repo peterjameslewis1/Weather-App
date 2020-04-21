@@ -4,14 +4,16 @@ let city = document.querySelector("#weather-search").value;
 
 let URL = 'https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=891f23ddd620354c9cedb1ceb5a8a36b';
 let URL1 = 'https://api.openweathermap.org/data/2.5/forecast?q=london&units=metric&appid=891f23ddd620354c9cedb1ceb5a8a36b';
-let URLClicked1 = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric' + '&appid=891f23ddd620354c9cedb1ceb5a8a36b';
-let URLForecast1 = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=metric' + '&appid=891f23ddd620354c9cedb1ceb5a8a36b';
+
+let URLClicked = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric' + '&appid=891f23ddd620354c9cedb1ceb5a8a36b';
+let URL1Clicked = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=metric' + '&appid=891f23ddd620354c9cedb1ceb5a8a36b';
+
+const fetchCurrent = (value) => {
+    let city = document.querySelector("#weather-search").value;
 
 
-const fetchCurrent = (URL) => {
     // Fetch Request //
-
-    fetch(URL)
+    fetch(value)
         .then((response) => {
             if (!response.ok)
                 console.log(`Error: ${response.status}`);
@@ -19,7 +21,7 @@ const fetchCurrent = (URL) => {
             return response.json();
         })
         .then((data) => {
-            console.log(data, 'Data');
+            console.log(data);
             current.append(x(data));
         })
     // Fetch Request End //
@@ -27,10 +29,10 @@ const fetchCurrent = (URL) => {
 
 
 
-const fetchHourly = (URL) => {
+const fetchHourly = (value) => {
     // Fetch Request
 
-    fetch(URL1)
+    fetch(value)
         .then((response) => {
             if (!response.ok)
                 console.log(`Error: ${response.status}`);
@@ -38,10 +40,12 @@ const fetchHourly = (URL) => {
             return response.json();
         })
         .then((data1) => {
-            console.log(data1, 'Data1');
-            // hourly.append(y(data1));
+            console.log(data1);
+            hourly.append(y(data1));
         });
     // Fetch Request End //
+
+
 };
 fetchCurrent(URL);
 fetchHourly(URL1);
@@ -61,15 +65,13 @@ function x(data) {
     const wind = document.querySelector('.tile .wind');
     const humidity = document.querySelector('.tile .humidity');
 
-
     const arr = Object.values(data.main);
     const dataMain = arr.map(x => Math.round(x));
 
-
     h2.innerHTML = `Current forecast in ${data.name}, ${data.sys.country}`;
     h3.innerHTML = `${data.weather[0].description}`;
-    img.src = `./images/${data.weather[0].icon}@2x.png`;
-    temp.innerHTML = `${dataMain[0]}oC`;
+    // img.src = `./images/${data.weather[0].icon}@2x.png`;
+    temp.innerHTML = `${dataMain[0]}°`;
     feelsLike.innerHTML = `Feels Like <span>${dataMain[1]}oC</span>`;
     tempMin.innerHTML = `Low <span>${dataMain[2]}oC</span>`;
     tempMax.innerHTML = `High <span>${dataMain[3]}oC</span>`;
@@ -78,6 +80,42 @@ function x(data) {
 };
 
 function y(data1) {
+    const hourlyContainer = document.querySelector('#hourly-container');
+    for (let i = 0; i < 9; i++) {
+        // Store data in variables
+        const icon = data1.list[i].weather[0].icon;
+        const description = data1.list[i].weather[0].description;
+        const temp = Math.round(data1.list[i].main.temp);
+        let time = data1.list[i].dt_txt;
+        const newTime = time.slice(11, 16);
+
+        console.log(icon);
+        console.log(description);
+        console.log(temp);
+        console.log(newTime);
+        // Create Elements
+        var a = document.createElement("img");
+        var b = document.createElement("div");
+        var c = document.createElement("div");
+        var d = document.createElement("div");
+        // Add Class
+        a.className = "test-img";
+        b.className = "test-div";
+        c.className = "test-div";
+        d.className = "test-div";
+        // Add innerHTML
+        a.src = `./images/${icon}@2x.png`;
+        b.innerHTML = `${description}`;
+        c.innerHTML = `${temp}°`;
+        d.innerHTML = `${newTime}`;
+        // Append Elements
+        hourly.appendChild(a);
+        hourly.appendChild(b);
+        hourly.appendChild(c);
+        hourly.appendChild(d);
+    };
+
+
 
 };
 
@@ -86,13 +124,11 @@ function y(data1) {
 
 
 
+
 // Search Bar Click Event //
 
 const getWeather = document.querySelector('#submit').addEventListener('click', function () {
-    // QuerySelectors
 
-    fetchCurrent(URLClicked1);
-    fetchHourly(URLForecast1);
 
 
 

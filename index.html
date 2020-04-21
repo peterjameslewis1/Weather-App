@@ -8,10 +8,18 @@
   <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
+
+
 <body>
   <div class="header">
-    <h2>PJ Weather</h2>
+    <a href="#"><i class="fas fa-bars"></i></a>
+    <!-- <img src="./images/weather-gif-9.gif" alt="" class="responsive-img"> -->
+    <a href="/index.html">
+      <!-- <h2>PJ Weather</h2> -->
+      <a href="#"><i class="fas fa-bars"></i></a>
+    </a>
   </div>
+
   <div class="input-container">
     <div id="submit-container">
       <input type="text" name="weather-search" placeholder="Search City..." id="weather-search" />
@@ -34,14 +42,11 @@
       <div class="humidity"></div>
     </div>
   </section>
-
-  <section id="hourly">
-
-  </section>
+  <h2 class="hourly-header">24 Hour Forecast</h2>
+  <section id="hourly"></section>
 
   <div class="british-isles">
-    <img class="map" src="https://m.files.bbci.co.uk/modules/bbc-morph-wr-decorative-map/2.3.0/img/map.png" alt=""
-      class="responsive-img">
+    <img class="map" src="./images/map-1.png" alt="" class="responsive-img">
     <a href="https://openweathermap.org/forecast5" class="manchester locations"> Manchester <i
         class="fas fa-map-pin"></i></a>
     <a href="#" class="edinburgh locations"><i class="fas fa-map-pin"></i> Edinburgh</a>
@@ -54,7 +59,7 @@
   <script src="app.js"></script>
   <script src="https://kit.fontawesome.com/0841a5b684.js" crossorigin="anonymous"></script>
 
+  <footer></footer>
 </body>
-
 
 </html>

@@ -14,6 +14,8 @@ html body.menu-open .real-menu {
   background: #ec6e4b;
   color: white;
   font-weight: 100;
+  display: flex;
+  flex-direction: column;
 }
 html body.menu-open .real-menu #close {
   font-family: helvetica;
@@ -21,11 +23,13 @@ html body.menu-open .real-menu #close {
   margin-bottom: 50px;
   display: inline-block;
 }
-html body.menu-open .real-menu #pages a {
+html body.menu-open .real-menu #pages {
   font-family: helvetica;
   font-weight: 100;
   padding: 20px 0;
   font-size: 22px;
+  color: white;
+  border-bottom: 1px solid white;
 }
 html body .header {
   background-color: #10293b;
@@ -53,6 +57,8 @@ html body .header a i {
 html body .header button {
   color: white;
   font-size: 26px;
+  background: none;
+  border: none;
 }
 html body .input-container {
   padding: 15px 0;

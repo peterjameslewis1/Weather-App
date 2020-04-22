@@ -12,7 +12,15 @@
 
 <body>
   <div class="header">
-    <a href="#"><i class="fas fa-bars"></i></a>
+    <div id="body-overlay"></div>
+    <nav class="real-menu" role="navigation">
+      <div id="close">X</div>
+      <a href="" id="pages">Sign up</a>
+      <a href="" id="pages">Log in</a>
+      <a href="" id="pages">Contact us</a>
+    </nav>
+    <button id="open-menu"><i class="fas fa-bars"></i></button>
+    <!-- <a href="#"><i class="fas fa-bars"></i></a> -->
     <div class="hdr-logo">
       <img class="logo" src="./images/logo.png" alt="" class="responsive-img">
     </div>
@@ -27,6 +35,8 @@
     </div>
     <button type="submit" class="submit" id="submit"><i class="fas fa-search"></i></button>
   </div>
+
+
   <div class="registration"></div>
   <section id="current">
     <h2></h2>
@@ -46,9 +56,11 @@
   <h2 class="hourly-header">24 Hour Forecast</h2>
   <section id="hourly"></section>
 
+  <div class="weather-map"></div>
+
   <div class="british-isles">
     <img class="map" src="./images/map-1.png" alt="" class="responsive-img">
-    <a href="" class="manchester locations"> Manchester <i class="fas fa-map-pin"></i></a>
+    <a href="#" class="manchester locations"> Manchester <i class="fas fa-map-pin"></i></a>
     <a href="#" class="edinburgh locations"><i class="fas fa-map-pin"></i> Edinburgh</a>
     <a href="#" class="belfast locations">Belfast <i class="fas fa-map-pin"></i> </a>
     <a href="#" class="cardiff locations">Cardiff <i class="fas fa-map-pin"></i></a>

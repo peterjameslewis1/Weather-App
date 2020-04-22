@@ -37,7 +37,7 @@ html body .header {
   align-items: center;
   justify-content: space-between;
   height: 60px;
-  padding: 5px 20px;
+  padding: 5px 15px;
 }
 html body .header .logo {
   width: 50px;
@@ -59,6 +59,7 @@ html body .header button {
   font-size: 26px;
   background: none;
   border: none;
+  padding: 0;
 }
 html body .input-container {
   padding: 15px 0;

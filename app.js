@@ -10,7 +10,6 @@ let URL2 = 'http://maps.openweathermap.org/maps/2.0/weather/PAR0/5/51.51/-0.13?d
 
 
 const fetchCurrent = (value) => {
-    let city = document.querySelector("#weather-search").value;
 
 
     // Fetch Request //
@@ -47,27 +46,11 @@ const fetchHourly = (value) => {
     // Fetch Request End //
 };
 
-const fetchMaps = (value) => {
-    // Fetch Request
-
-    fetch(value)
-        .then((response) => {
-            if (!response.ok)
-                console.log(`Error: ${response.status}`);
-
-            return response.json();
-        })
-        .then((data2) => {
-            console.log(data2);
-            // hourly.append(y(data1));
-        });
-    // Fetch Request End //
-};
 
 
 fetchCurrent(URL);
 fetchHourly(URL1);
-fetchMaps(URL2);
+
 
 // Search Bar Click Event //
 const inputSearch = () => {
@@ -172,9 +155,9 @@ function y(data1) {
 };
 
 // Update innerHTML Function End //
-let smile = true;
 
-const treFalse = smile === true ? console.log('its true') : console.log('its false');
+
+
 
 // SIDEBAR //
 
@@ -197,6 +180,10 @@ function removeClass(ele, cls) {
 function init() {
     document.getElementById("open-menu").addEventListener("click", toggleMenu);
     document.getElementById("close").addEventListener("click", toggleMenu);
+    document.getElementById("create-acc").addEventListener("click", toggleMenu);
+    document.getElementById("create-acc").addEventListener("click", signUp);
+    document.getElementById("login").addEventListener("click", toggleMenu);
+    document.getElementById("login").addEventListener("click", login);
 }
 
 //The actual fuction
@@ -216,6 +203,60 @@ document.addEventListener('readystatechange', function () {
     }
 });
 
-
-
 // SIDEBAR END //
+
+const signUp = () => {
+    const clicked = document.querySelector('.container-login');
+    clicked.classList.remove('clicked');
+
+    document.querySelector('.container-login span i').addEventListener('click', function () {
+        clicked.classList.add('clicked');
+    })
+}
+
+const login = () => {
+    document.querySelector('.container-login h2').innerHTML = 'Login';
+    document.querySelector('.container-login p').style.display = 'none';
+    document.querySelector('.container-login button').innerHTML = 'Login';
+    const clicked = document.querySelector('.container-login');
+    clicked.classList.remove('clicked');
+
+    document.querySelector('.container-login span i').addEventListener('click', function () {
+        clicked.classList.add('clicked');
+    })
+}
+
+
+
+
+
+
+
+
+
+// Username & Password Check //
+
+document.getElementById("sign-up").addEventListener("click", function () {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    if (username.length >= 6 && password.length >= 6) {
+        if (username.includes(" ") || password.includes(" ")) {
+            document.getElementById("validLogin").innerHTML = "No Spaces";
+        } else {
+            // document.getElementById("validLogin").innerHTML = "Account Created!";
+            document.querySelector('#sign-up').addEventListener('click', () => {
+                document.querySelector('#sign-up img').classList.remove('clicked');
+                setTimeout(function () {
+                    document.location.reload()
+                }, 3000);
+                setTimeout(function () {
+                    document.getElementById("validLogin").innerHTML = "Account Created!";
+                }, 1000);
+            })
+        }
+    } else {
+        document.getElementById("validLogin").innerHTML = "Credentials must be greater than 6 characters.";
+    }
+});
+// Username & Password Check END //

@@ -5,10 +5,19 @@ html {
     @secondary-colour: white;
     @accent-colour: #ec6e4b;
 
+    @import "sign-up.less";
+
     body {
         margin: 0;
         background: @primary-colour;
         z-index: -100;
+
+
+
+        .clicked {
+            display: none;
+        }
+
 
         &.menu-open {
 
@@ -36,13 +45,14 @@ html {
                     display: inline-block;
                 }
 
-                #pages {
+                .pages {
                     font-family: @font-family;
                     font-weight: 100;
                     padding: 20px 0;
                     font-size: 22px;
                     color: @secondary-colour;
                     border-bottom: 1px solid @secondary-colour;
+                    cursor: pointer;
                 }
             }
         }
@@ -254,10 +264,6 @@ html {
                         font-size: 22px;
                     }
                 }
-            }
-
-            .clicked {
-                display: none;
             }
         }
 

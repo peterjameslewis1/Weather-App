@@ -1,10 +1,68 @@
 html {
   box-sizing: border-box;
 }
+html .container-login {
+  color: white;
+  font-family: helvetica;
+  font-weight: 100;
+  background: #ec6e4b;
+  padding: 0 20px 20px 50px;
+}
+html .container-login span {
+  padding-top: 20px;
+  display: block;
+  width: 100%;
+}
+html .container-login span i {
+  float: right;
+}
+html .container-login h2 {
+  font-size: 40px;
+  margin: 0;
+  padding: 30px 0;
+}
+html .container-login input {
+  display: block;
+  width: 100%;
+  max-width: 80%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  outline-style: none;
+  outline: none;
+  border: none;
+  padding: 7px 12px;
+  box-sizing: border-box;
+}
+html .container-login button {
+  background: transparent;
+  width: 80%;
+  color: #fefefe;
+  padding: 10px 12px;
+  font-family: helvetica;
+  font-size: 16px;
+  border-radius: 10px;
+  margin: 20px 0 0 0;
+  font-weight: 100;
+  text-transform: capitalize;
+  border: 2px solid white;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+html .container-login button img {
+  width: 18px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+html .container-login button:focus {
+  outline: none;
+}
 html body {
   margin: 0;
   background: #10293b;
   z-index: -100;
+}
+html body .clicked {
+  display: none;
 }
 html body.menu-open #body-overlay {
   display: block;
@@ -23,13 +81,14 @@ html body.menu-open .real-menu #close {
   margin-bottom: 50px;
   display: inline-block;
 }
-html body.menu-open .real-menu #pages {
+html body.menu-open .real-menu .pages {
   font-family: helvetica;
   font-weight: 100;
   padding: 20px 0;
   font-size: 22px;
   color: white;
   border-bottom: 1px solid white;
+  cursor: pointer;
 }
 html body .header {
   background-color: #10293b;
@@ -204,9 +263,6 @@ html body #current .tile div {
 html body #current .tile div span {
   display: block;
   font-size: 22px;
-}
-html body #current .clicked {
-  display: none;
 }
 html body #hourly {
   padding: 20px 20px;

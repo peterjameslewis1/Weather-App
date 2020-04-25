@@ -6,18 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
   <link rel="stylesheet" href="style.css" type="text/css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 
 
 <body>
+  <div class="container-login clicked">
+    <span><i class="material-icons">close</i></span>
+    <h2>Sign up</h2>
+    <p>Sign up today and receive live weather updates everyday.</p>
+    <input type="text" name="username" id="username" placeholder="Username" />
+    <input type="password" name="pass" id="password" placeholder="Password" />
+    <p id="validLogin"></p>
+    <button type="button" id="sign-up">Sign up <img class="clicked" src="./images/712.gif" alt=""
+        class="responsive-img"></button>
+  </div>
   <div class="header">
     <div id="body-overlay"></div>
     <nav class="real-menu" role="navigation">
       <div id="close">X</div>
-      <a href="" id="pages">Sign up</a>
-      <a href="" id="pages">Log in</a>
-      <a href="" id="pages">Contact us</a>
+      <div class="pages " id="create-acc">Sign up</div>
+      <div class="pages" id="login">Log in</div>
     </nav>
     <button id="open-menu"><i class="fas fa-bars"></i></button>
     <!-- <a href="#"><i class="fas fa-bars"></i></a> -->

@@ -1,88 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css" type="text/css" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-
-
-
-<body>
-  <div class="container-login clicked">
-    <span><i class="material-icons">close</i></span>
-    <h2>Sign up</h2>
-    <p>Sign up today and receive live weather updates everyday.</p>
-    <input type="text" name="username" id="username" placeholder="Username" />
-    <input type="password" name="pass" id="password" placeholder="Password" />
-    <p id="validLogin"></p>
-    <button type="button" id="sign-up">Sign up <img class="clicked" src="./images/712.gif" alt=""
-        class="responsive-img"></button>
-  </div>
-  <div class="header">
-    <div id="body-overlay"></div>
-    <nav class="real-menu" role="navigation">
-      <div id="close">X</div>
-      <div class="pages " id="create-acc">Sign up</div>
-      <div class="pages" id="login">Log in</div>
-    </nav>
-    <button id="open-menu"><i class="fas fa-bars"></i></button>
-    <!-- <a href="#"><i class="fas fa-bars"></i></a> -->
-    <div class="hdr-logo">
-      <img class="logo" src="./images/logo.png" alt="" class="responsive-img">
+  <body>
+    <div class="container-login clicked">
+      <span><i class="material-icons">close</i></span>
+      <h2>Sign up</h2>
+      <p>Sign up today and receive live weather updates everyday.</p>
+      <input type="text" name="username" id="username" placeholder="Username" />
+      <input type="password" name="pass" id="password" placeholder="Password" />
+      <p id="validLogin"></p>
+      <button type="button" id="sign-up">
+        Sign up
+        <img
+          class="clicked"
+          src="./images/712.gif"
+          alt=""
+          class="responsive-img"
+        />
+      </button>
     </div>
-    <div class="social">
-      <a href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i></a>
+    <div class="header">
+      <div id="body-overlay"></div>
+      <nav class="real-menu" role="navigation">
+        <div id="close">
+          <i class="material-icons">close</i>
+        </div>
+        <div class="pages" id="create-acc">Sign up</div>
+        <div class="pages" id="login">Log in</div>
+      </nav>
+      <button id="open-menu"><i class="fas fa-bars"></i></button>
+      <!-- <a href="#"><i class="fas fa-bars"></i></a> -->
+      <div class="hdr-logo">
+        <img
+          class="logo"
+          src="./images/logo.png"
+          alt=""
+          class="responsive-img"
+        />
+      </div>
+      <div class="social">
+        <a href="https://www.facebook.com/"
+          ><i class="fab fa-facebook-square"></i
+        ></a>
+      </div>
     </div>
-  </div>
 
-  <div class="input-container">
-    <div id="submit-container">
-      <input type="text" name="weather-search" placeholder="Search City..." id="weather-search" />
+    <div class="input-container">
+      <div id="submit-container">
+        <input
+          type="text"
+          name="weather-search"
+          placeholder="Search City..."
+          id="weather-search"
+        />
+      </div>
+      <button type="submit" class="submit" id="submit">
+        <i class="fas fa-search"></i>
+      </button>
     </div>
-    <button type="submit" class="submit" id="submit"><i class="fas fa-search"></i></button>
-  </div>
 
-
-  <div class="registration">
-    <h2 class="registration-title"></h2>
-  </div>
-  <section id="current">
-    <h2></h2>
-    <h3></h3>
-    <div class="temp-container">
-      <img src="" alt="" class="responsive-img">
-      <h3 class="temp"></h3>
+    <div class="registration">
+      <h2 class="registration-title"></h2>
     </div>
-    <div class="tile">
-      <div class="feels-like"></div>
-      <div class="temp-min"></div>
-      <div class="temp-max"></div>
-      <div class="wind"></div>
-      <div class="humidity"></div>
-    </div>
-  </section>
-  <h2 class="hourly-header">24 Hour Forecast</h2>
-  <section id="hourly">
-    <div id="test-div-container">
-      <div id="test-div"></div>
-      <div id="test-div"></div>
-      <div id="test-div"></div>
-      <div id="test-div"></div>
-      <div id="test-div"></div>
-      <div id="test-div"></div>
-      <div id="test-div"></div>
-      <div id="test-div"></div>
-      <div id="test-div"></div>
-    </div>
-  </section>
+    <section id="current">
+      <h2></h2>
+      <h3></h3>
+      <div class="temp-container">
+        <img src="" alt="" class="responsive-img" />
+        <h3 class="temp"></h3>
+      </div>
+      <div class="tile">
+        <div class="feels-like"></div>
+        <div class="temp-min"></div>
+        <div class="temp-max"></div>
+        <div class="wind"></div>
+        <div class="humidity"></div>
+      </div>
+    </section>
+    <h2 class="hourly-header">24 Hour Forecast</h2>
+    <section id="hourly">
+      <div id="test-div-container">
+        <div id="test-div"></div>
+        <div id="test-div"></div>
+        <div id="test-div"></div>
+        <div id="test-div"></div>
+        <div id="test-div"></div>
+        <div id="test-div"></div>
+        <div id="test-div"></div>
+        <div id="test-div"></div>
+        <div id="test-div"></div>
+      </div>
+    </section>
 
-  <div class="weather-map"></div>
+    <div class="weather-map"></div>
 
-  <!--<div class="british-isles">
+    <!--<div class="british-isles">
     <img class="map" src="./images/map-1.png" alt="" class="responsive-img">
     <a href="#" class="manchester locations"> Manchester <i class="fas fa-map-pin"></i></a>
     <a href="#" class="edinburgh locations"><i class="fas fa-map-pin"></i> Edinburgh</a>
@@ -92,9 +114,11 @@
     <a href="#" class="inverness locations">Inverness <i class="fas fa-map-pin"></i></a>
   </div>-->
 
-  <script src="app.js"></script>
-  <script src="https://kit.fontawesome.com/0841a5b684.js" crossorigin="anonymous"></script>
-  <footer></footer>
-</body>
-
+    <script src="app.js"></script>
+    <script
+      src="https://kit.fontawesome.com/0841a5b684.js"
+      crossorigin="anonymous"
+    ></script>
+    <footer></footer>
+  </body>
 </html>

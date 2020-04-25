@@ -71,8 +71,6 @@ html {
                 cursor: pointer;
                 text-decoration: none;
 
-
-
                 i {
                     color: @secondary-colour;
                     font-size: 26px;
@@ -266,25 +264,39 @@ html {
         #hourly {
             padding: 20px 20px;
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
             border: 1px solid @accent-colour;
             border-radius: 10px;
             margin: 10px;
+            overflow: scroll;
 
+            #test-div-container {
+                margin-bottom: 10px;
+                display: flex;
 
-            .test-div {
-                flex: 1 1 25%;
-                color: @secondary-colour;
-                font-family: @font-family;
-                text-transform: capitalize;
-                text-align: center;
+                #test-div {
+                    margin: 0 15px;
+
+                    &:last-of-type {
+                        margin-right: 30px;
+                    }
+
+                    .test-div {
+
+                        color: @secondary-colour;
+                        font-family: @font-family;
+                        text-transform: capitalize;
+                        text-align: center;
+                        padding: 10px 0 10px 0;
+                        font-size: 16px;
+                        font-weight: 100;
+                    }
+                }
+
+                .test-img {
+                    width: 50px;
+                }
             }
-
-            .test-img {
-                width: 80px;
-            }
-
         }
 
         .hourly-header {

@@ -211,21 +211,33 @@ html body #current .clicked {
 html body #hourly {
   padding: 20px 20px;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   border: 1px solid #ec6e4b;
   border-radius: 10px;
   margin: 10px;
+  overflow: scroll;
 }
-html body #hourly .test-div {
-  flex: 1 1 25%;
+html body #hourly #test-div-container {
+  margin-bottom: 10px;
+  display: flex;
+}
+html body #hourly #test-div-container #test-div {
+  margin: 0 15px;
+}
+html body #hourly #test-div-container #test-div:last-of-type {
+  margin-right: 30px;
+}
+html body #hourly #test-div-container #test-div .test-div {
   color: white;
   font-family: helvetica;
   text-transform: capitalize;
   text-align: center;
+  padding: 10px 0 10px 0;
+  font-size: 16px;
+  font-weight: 100;
 }
-html body #hourly .test-img {
-  width: 80px;
+html body #hourly #test-div-container .test-img {
+  width: 50px;
 }
 html body .hourly-header {
   color: white;

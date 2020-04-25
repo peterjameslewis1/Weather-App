@@ -6,6 +6,7 @@ let city = document.querySelector("#weather-search").value;
 
 let URL = 'https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=891f23ddd620354c9cedb1ceb5a8a36b';
 let URL1 = 'https://api.openweathermap.org/data/2.5/forecast?q=london&units=metric&appid=891f23ddd620354c9cedb1ceb5a8a36b';
+let URL2 = 'http://maps.openweathermap.org/maps/2.0/weather/PAR0/5/51.51/-0.13?date=1527811200&appid=891f23ddd620354c9cedb1ceb5a8a36b';
 
 
 const fetchCurrent = (value) => {
@@ -45,8 +46,28 @@ const fetchHourly = (value) => {
         });
     // Fetch Request End //
 };
+
+const fetchMaps = (value) => {
+    // Fetch Request
+
+    fetch(value)
+        .then((response) => {
+            if (!response.ok)
+                console.log(`Error: ${response.status}`);
+
+            return response.json();
+        })
+        .then((data2) => {
+            console.log(data2);
+            // hourly.append(y(data1));
+        });
+    // Fetch Request End //
+};
+
+
 fetchCurrent(URL);
 fetchHourly(URL1);
+fetchMaps(URL2);
 
 // Search Bar Click Event //
 const inputSearch = () => {
@@ -55,6 +76,7 @@ const inputSearch = () => {
 
         let URLClicked = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric' + '&appid=891f23ddd620354c9cedb1ceb5a8a36b';
         let URL1Clicked = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=metric' + '&appid=891f23ddd620354c9cedb1ceb5a8a36b';
+
         fetchCurrent(URLClicked);
         fetchHourly(URL1Clicked);
     });
@@ -103,10 +125,10 @@ function x(data) {
     tempMax.innerHTML = `High <span>${dataMain[3]}°</span>`;
     wind.innerHTML = `Wind speed <span>${data.wind.speed}mph</span>`;
     humidity.innerHTML = `Humidity <span>${dataMain[5]}%</span>`;
+    return '';;
 };
 
 function y(data1) {
-    const hourlyContainer = document.querySelector('#hourly-container');
     for (let i = 0; i < 9; i++) {
         // Store data in variables
         const icon = data1.list[i].weather[0].icon;
@@ -119,11 +141,14 @@ function y(data1) {
                 console.log(description);
                 console.log(temp);
                 console.log(newTime); */
+        const outerContainer = document.getElementById('test-div-container');
+        const container = document.getElementById('test-div');
         // Create Elements
         var a = document.createElement("img");
         var b = document.createElement("div");
         var c = document.createElement("div");
         var d = document.createElement("div");
+
         // Add Class
         a.className = "test-img";
         b.className = "test-div";
@@ -135,17 +160,21 @@ function y(data1) {
         c.innerHTML = `${temp}°`;
         d.innerHTML = `${newTime}`;
         // Append Elements
-        hourly.appendChild(a);
-        hourly.appendChild(b);
-        hourly.appendChild(c);
-        hourly.appendChild(d);
+        container.innerHTML = "";
+        container.appendChild(a);
+        container.appendChild(b);
+        container.appendChild(c);
+        container.appendChild(d);
+        outerContainer.appendChild(container);
+        hourly.appendChild(outerContainer);
     };
+    return '';
 };
 
 // Update innerHTML Function End //
+let smile = true;
 
-
-
+const treFalse = smile === true ? console.log('its true') : console.log('its false');
 
 // SIDEBAR //
 

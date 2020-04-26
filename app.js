@@ -106,7 +106,7 @@ function x(data) {
     feelsLike.innerHTML = `Feels Like <span>${dataMain[1]}°</span>`;
     tempMin.innerHTML = `Low <span>${dataMain[2]}°</span>`;
     tempMax.innerHTML = `High <span>${dataMain[3]}°</span>`;
-    wind.innerHTML = `Wind speed <span>${data.wind.speed}mph</span>`;
+    wind.innerHTML = `Wind speed <span>${data.wind.speed}kph</span>`;
     humidity.innerHTML = `Humidity <span>${dataMain[5]}%</span>`;
     return '';;
 };

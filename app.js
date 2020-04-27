@@ -4,87 +4,69 @@ const map = document.querySelector('.weather-map');
 let city = document.querySelector("#weather-search").value;
 
 
-let URL = 'https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=891f23ddd620354c9cedb1ceb5a8a36b';
-let URL1 = 'https://api.openweathermap.org/data/2.5/forecast?q=london&units=metric&appid=891f23ddd620354c9cedb1ceb5a8a36b';
-let URL2 = 'http://maps.openweathermap.org/maps/2.0/weather/PAR0/5/51.51/-0.13?date=1527811200&appid=891f23ddd620354c9cedb1ceb5a8a36b';
+const URL = fetch('https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=891f23ddd620354c9cedb1ceb5a8a36b');
+const URL1 = fetch('https://api.openweathermap.org/data/2.5/forecast?q=london&units=metric&appid=891f23ddd620354c9cedb1ceb5a8a36b');
+
+const URLClicked = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric' + '&appid=891f23ddd620354c9cedb1ceb5a8a36b';
+const URL1Clicked = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=metric' + '&appid=891f23ddd620354c9cedb1ceb5a8a36b';
+
+// Promise.all to get onload URLs //
+Promise.all([URL, URL1]).then(values => {
+
+    return Promise.all(values.map(r => r.json()));
+}).then(([data, data1]) => {
+
+    console.log(data)
+    console.log(data1)
+    current.append(x(data));
+    hourly.append(y(data1));
+});
+// Promise.all to get onload URLs END //
 
 
-const fetchCurrent = (value) => {
-
-
-    // Fetch Request //
-    fetch(value)
+// Second Fetch to get click event URLs //
+const fetchClick = (city) => {
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric' + '&appid=891f23ddd620354c9cedb1ceb5a8a36b')
         .then((response) => {
             if (!response.ok)
-                console.log(`Error: ${response.status}`);
+                console.log(`${response.status}`);
 
             return response.json();
-        })
-        .then((data) => {
+        }).then((data) => {
             console.log(data);
             current.append(x(data));
-        })
-    // Fetch Request End //
-};
 
-
-
-const fetchHourly = (value) => {
-    // Fetch Request
-
-    fetch(value)
-        .then((response) => {
+            return fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=metric' + '&appid=891f23ddd620354c9cedb1ceb5a8a36b')
+        }).then((response) => {
             if (!response.ok)
-                console.log(`Error: ${response.status}`);
+                console.log(`${response.status}`);
 
             return response.json();
-        })
-        .then((data1) => {
-            console.log(data1);
+        }).then((data1) => {
+            console.log(data1)
             hourly.append(y(data1));
-        });
-    // Fetch Request End //
+        })
 };
-
-
-
-fetchCurrent(URL);
-fetchHourly(URL1);
+// Second Fetch to get click event URLs END //
 
 
 // Search Bar Click Event //
-const inputSearch = () => {
-    const submitClick = document.querySelector('#submit').addEventListener('click', function () {
+const submitClick = document.querySelector('#submit').addEventListener('click', function () {
+    let city = document.querySelector("#weather-search").value;
+    fetchClick(city);
+});
+
+const submitKey = document.querySelector('#weather-search').addEventListener('keypress', function (e) {
+    if (e.key == 'Enter') {
         let city = document.querySelector("#weather-search").value;
+        fetchClick(city);
 
-        let URLClicked = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric' + '&appid=891f23ddd620354c9cedb1ceb5a8a36b';
-        let URL1Clicked = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=metric' + '&appid=891f23ddd620354c9cedb1ceb5a8a36b';
-
-        fetchCurrent(URLClicked);
-        fetchHourly(URL1Clicked);
-    });
-
-    const submitKey = document.querySelector('#weather-search').addEventListener('keypress', function (e) {
-        if (e.key == 'Enter') {
-            let city = document.querySelector("#weather-search").value;
-
-            let URLClicked = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric' + '&appid=891f23ddd620354c9cedb1ceb5a8a36b';
-            let URL1Clicked = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=metric' + '&appid=891f23ddd620354c9cedb1ceb5a8a36b';
-            fetchCurrent(URLClicked);
-            fetchHourly(URL1Clicked);
-        }
-    });
-};
-inputSearch();
-
+    }
+});
 // Search Bar Click Event End //
 
 
-
-
-
 // Update innerHTML Function //
-
 function x(data) {
     const h2 = document.querySelector('#current h2');
     const h3 = document.querySelector('#current h3');
@@ -106,9 +88,9 @@ function x(data) {
     feelsLike.innerHTML = `Feels Like <span>${dataMain[1]}°</span>`;
     tempMin.innerHTML = `Low <span>${dataMain[2]}°</span>`;
     tempMax.innerHTML = `High <span>${dataMain[3]}°</span>`;
-    wind.innerHTML = `Wind speed <span>${data.wind.speed}kph</span>`;
+    wind.innerHTML = `Wind speed <span>${data.wind.speed}mph</span>`;
     humidity.innerHTML = `Humidity <span>${dataMain[5]}%</span>`;
-    return '';;
+    return '';
 };
 
 function y(data1) {
@@ -120,10 +102,6 @@ function y(data1) {
         let time = data1.list[i].dt_txt;
         const newTime = time.slice(11, 16);
 
-        /*         console.log(icon);
-                console.log(description);
-                console.log(temp);
-                console.log(newTime); */
         const outerContainer = document.getElementById('test-div-container');
         const container = document.getElementById('test-div');
         // Create Elements
@@ -153,14 +131,12 @@ function y(data1) {
     };
     return '';
 };
-
 // Update innerHTML Function End //
 
 
 
 
 // SIDEBAR //
-
 function hasClass(ele, cls) {
     return !!ele.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
 }
@@ -202,8 +178,9 @@ document.addEventListener('readystatechange', function () {
         init();
     }
 });
-
 // SIDEBAR END //
+
+
 
 const signUp = () => {
     const clicked = document.querySelector('.container-login');
@@ -229,13 +206,7 @@ const login = () => {
 
 
 
-
-
-
-
-
 // Username & Password Check //
-
 document.getElementById("sign-up").addEventListener("click", function () {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;

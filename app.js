@@ -1,53 +1,30 @@
 const current = document.querySelector('#current');
 const hourly = document.querySelector('#hourly');
 const map = document.querySelector('.weather-map');
-let city = document.querySelector("#weather-search").value;
 
 
-const URL = fetch('https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=891f23ddd620354c9cedb1ceb5a8a36b');
-const URL1 = fetch('https://api.openweathermap.org/data/2.5/forecast?q=london&units=metric&appid=891f23ddd620354c9cedb1ceb5a8a36b');
-
-const URLClicked = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric' + '&appid=891f23ddd620354c9cedb1ceb5a8a36b';
-const URL1Clicked = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=metric' + '&appid=891f23ddd620354c9cedb1ceb5a8a36b';
-
-// Promise.all to get onload URLs //
-Promise.all([URL, URL1]).then(values => {
-
-    return Promise.all(values.map(r => r.json()));
-}).then(([data, data1]) => {
-
-    console.log(data)
-    console.log(data1)
+async function fetch() {
+    const prom1 = axios.get('https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=891f23ddd620354c9cedb1ceb5a8a36b');
+    const prom2 = axios.get('https://api.openweathermap.org/data/2.5/forecast?q=london&units=metric&appid=891f23ddd620354c9cedb1ceb5a8a36b');
+    const URL = await prom1;
+    const URL1 = await prom2;
+    const data = URL.data;
+    const data1 = URL1.data;
     current.append(x(data));
     hourly.append(y(data1));
-});
-// Promise.all to get onload URLs END //
-
-
-// Second Fetch to get click event URLs //
-const fetchClick = (city) => {
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric' + '&appid=891f23ddd620354c9cedb1ceb5a8a36b')
-        .then((response) => {
-            if (!response.ok)
-                console.log(`${response.status}`);
-
-            return response.json();
-        }).then((data) => {
-            console.log(data);
-            current.append(x(data));
-
-            return fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=metric' + '&appid=891f23ddd620354c9cedb1ceb5a8a36b')
-        }).then((response) => {
-            if (!response.ok)
-                console.log(`${response.status}`);
-
-            return response.json();
-        }).then((data1) => {
-            console.log(data1)
-            hourly.append(y(data1));
-        })
 };
-// Second Fetch to get click event URLs END //
+fetch();
+
+async function fetchClick(city) {
+    const prom3 = axios.get('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric' + '&appid=891f23ddd620354c9cedb1ceb5a8a36b');
+    const prom4 = axios.get('https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=metric' + '&appid=891f23ddd620354c9cedb1ceb5a8a36b');
+    const URL = await prom3;
+    const URL1 = await prom4;
+    const data = URL.data;
+    const data1 = URL1.data;
+    current.append(x(data));
+    hourly.append(y(data1));
+};
 
 
 // Search Bar Click Event //
@@ -134,8 +111,6 @@ function y(data1) {
 // Update innerHTML Function End //
 
 
-
-
 // SIDEBAR //
 function hasClass(ele, cls) {
     return !!ele.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
@@ -188,8 +163,8 @@ const signUp = () => {
 
     document.querySelector('.container-login span i').addEventListener('click', function () {
         clicked.classList.add('clicked');
-    })
-}
+    });
+};
 
 const login = () => {
     document.querySelector('.container-login h2').innerHTML = 'Login';
@@ -200,10 +175,8 @@ const login = () => {
 
     document.querySelector('.container-login span i').addEventListener('click', function () {
         clicked.classList.add('clicked');
-    })
-}
-
-
+    });
+};
 
 
 // Username & Password Check //
@@ -219,7 +192,7 @@ document.getElementById("sign-up").addEventListener("click", function () {
             document.querySelector('#sign-up').addEventListener('click', () => {
                 document.querySelector('#sign-up img').classList.remove('clicked');
                 setTimeout(function () {
-                    document.location.reload()
+                    document.location.reload();
                 }, 3000);
                 setTimeout(function () {
                     document.getElementById("validLogin").innerHTML = "Account Created!";

@@ -61,6 +61,47 @@ html body {
   background: #10293b;
   z-index: -100;
 }
+html body .container-login {
+  color: white;
+  font-family: helvetica;
+  font-weight: 100;
+}
+html body .container-login h2 {
+  font-size: 40px;
+}
+html body .container-login input {
+  display: block;
+  width: 100%;
+  max-width: 80%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  outline-style: none;
+  outline: none;
+  border: none;
+  padding: 7px 12px;
+  box-sizing: border-box;
+}
+html body .container-login button {
+  background: transparent;
+  width: 80%;
+  color: #fefefe;
+  padding: 10px 12px;
+  font-family: helvetica;
+  font-size: 16px;
+  border-radius: 10px;
+  margin-top: 50px;
+  font-weight: 100;
+  text-transform: capitalize;
+  border: 2px solid white;
+  transition: all 0.3s ease-in-out;
+}
+html body .container-login button:focus,
+html body .container-login button:hover {
+  outline-style: none;
+  cursor: pointer;
+  background: white;
+  color: #ec6e4b;
+}
 html body .clicked {
   display: none;
 }

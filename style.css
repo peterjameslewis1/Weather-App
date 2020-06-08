@@ -1,87 +1,57 @@
 html {
   box-sizing: border-box;
 }
-html .container-login {
-  color: white;
-  font-family: helvetica;
-  font-weight: 100;
-  background: #ec6e4b;
-  padding: 0 20px 20px 50px;
-}
-html .container-login span {
-  padding-top: 20px;
-  display: block;
-  width: 100%;
-}
-html .container-login span i {
-  float: right;
-}
-html .container-login h2 {
-  font-size: 40px;
-  margin: 0;
-  padding: 30px 0;
-}
-html .container-login input {
-  display: block;
-  width: 100%;
-  max-width: 80%;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  outline-style: none;
-  outline: none;
-  border: none;
-  padding: 7px 12px;
-  box-sizing: border-box;
-}
-html .container-login button {
-  background: transparent;
-  width: 80%;
-  color: #fefefe;
-  padding: 10px 12px;
-  font-family: helvetica;
-  font-size: 16px;
-  border-radius: 10px;
-  margin: 20px 0 0 0;
-  font-weight: 100;
-  text-transform: capitalize;
-  border: 2px solid white;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-}
-html .container-login button img {
-  width: 18px;
-  vertical-align: middle;
-  margin-left: 5px;
-}
-html .container-login button:focus {
-  outline: none;
-}
 html body {
   margin: 0;
   background: #10293b;
   z-index: -100;
 }
 html body .container-login {
+  background-color: #ec6e4b;
   color: white;
   font-family: helvetica;
   font-weight: 100;
+  text-align: center;
 }
-html body .container-login h2 {
+html body .container-login .close {
+  display: flex;
+  justify-content: flex-end;
+}
+html body .container-login .close i {
+  margin: 10px 10px 0 0;
+}
+@media screen and (min-width: 1200px) {
+  html body .container-login .close i {
+    margin: 30px 30px 0 0;
+  }
+}
+html body .container-login .wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1200px) {
+  html body .container-login .wrapper {
+    margin: 0 auto 50px auto;
+    width: 50%;
+  }
+}
+html body .container-login .wrapper h2 {
   font-size: 40px;
+  margin: 20px;
 }
-html body .container-login input {
+html body .container-login .wrapper input {
   display: block;
   width: 100%;
   max-width: 80%;
-  margin-bottom: 10px;
+  margin: 0 auto 10px auto;
   border-radius: 10px;
   outline-style: none;
   outline: none;
   border: none;
-  padding: 7px 12px;
+  padding: 12px;
   box-sizing: border-box;
 }
-html body .container-login button {
+html body .container-login .wrapper button {
   background: transparent;
   width: 80%;
   color: #fefefe;
@@ -89,18 +59,24 @@ html body .container-login button {
   font-family: helvetica;
   font-size: 16px;
   border-radius: 10px;
-  margin-top: 50px;
+  margin: 20px 0;
   font-weight: 100;
   text-transform: capitalize;
   border: 2px solid white;
   transition: all 0.3s ease-in-out;
 }
-html body .container-login button:focus,
-html body .container-login button:hover {
+html body .container-login .wrapper button:focus,
+html body .container-login .wrapper button:hover {
   outline-style: none;
   cursor: pointer;
   background: white;
   color: #ec6e4b;
+}
+html body .container-login .wrapper button span {
+  height: 20px;
+  width: 20px;
+  border-top-right-radius: 50%;
+  border: 1px solid #10293b;
 }
 html body .clicked {
   display: none;
@@ -139,6 +115,13 @@ html body .header {
   height: 60px;
   padding: 5px 15px;
 }
+@media screen and (min-width: 1200px) {
+  html body .header {
+    width: 62%;
+    margin: 0 auto;
+    padding: 15px 0;
+  }
+}
 html body .header .logo {
   width: 50px;
   margin-top: 5px;
@@ -154,12 +137,18 @@ html body .header a i {
   color: white;
   font-size: 26px;
 }
-html body .header button {
+html body .header #open-menu {
   color: white;
   font-size: 26px;
   background: none;
   border: none;
   padding: 0;
+  border-style: none;
+  cursor: pointer;
+}
+html body .header #open-menu:active,
+html body .header #open-menu:focus {
+  border-style: none;
 }
 html body .input-container {
   padding: 15px 0;
@@ -176,33 +165,13 @@ html body .input-container #submit-container #weather-search {
   background: transparent;
   color: #ec6e4b;
   padding-left: 10px;
-  border-radius: 3px 0 0 3px;
+  border-radius: 3px;
   font-size: 14px;
   text-transform: capitalize;
 }
 html body .input-container #submit-container #weather-search:focus {
   outline: none;
   padding-left: 10px;
-}
-html body .input-container #submit {
-  border: 2px solid #ec6e4b;
-  color: #ec6e4b;
-  border-left: none;
-  background: transparent;
-  transition: all 0.5s;
-  border-radius: 0 3px 3px 0;
-  height: 36px;
-  width: 40px;
-}
-html body .input-container #submit:hover,
-html body .input-container #submit:focus {
-  outline-style: none;
-  background: #ec6e4b;
-  color: #10293b;
-  cursor: pointer;
-}
-html body .input-container #submit i {
-  font-size: 14px;
 }
 html body .input-container .input-container__icon {
   background-color: skyblue;
@@ -211,60 +180,20 @@ html body .input-container .input-container__icon {
 html body .input-container .input-container__icon i {
   line-height: 32px;
 }
-html body .british-isles {
-  position: relative;
-}
-html body .british-isles .map {
-  width: 90%;
-  height: 100%;
-  margin: -30px auto 0 auto;
-  display: block;
-}
-html body .british-isles .locations {
-  background: #10293b7d;
-  padding: 10px 15px;
-  position: absolute;
-  border-radius: 3px;
-  color: white;
-  font-family: helvetica;
-  font-size: 13px;
-  cursor: pointer;
-  border: 1px solid white;
-}
-html body .british-isles .manchester {
-  left: 43%;
-  top: 63%;
-}
-html body .british-isles .edinburgh {
-  top: 42%;
-  left: 54%;
-}
-html body .british-isles .belfast {
-  top: 53%;
-  left: 34%;
-  top: 47%;
-  left: 22%;
-}
-html body .british-isles .cardiff {
-  top: 78%;
-  left: 41%;
-}
-html body .british-isles .london {
-  top: 80%;
-  left: 62%;
-}
-html body .british-isles .inverness {
-  top: 20%;
-  left: 30%;
-}
 html body #current {
   color: white;
   font-family: helvetica;
   font-weight: 100;
-  margin: 20px 10px 100px 10px;
+  margin: 20px 15px 100px 15px;
   padding: 20px;
   border: 1px solid #ec6e4b;
   border-radius: 10px;
+}
+@media screen and (min-width: 1200px) {
+  html body #current {
+    margin: 0 auto 100px auto;
+    max-width: 60%;
+  }
 }
 html body #current h2 {
   text-align: center;
@@ -314,12 +243,21 @@ html body #hourly {
   margin: 10px;
   overflow: scroll;
 }
+@media screen and (min-width: 1200px) {
+  html body #hourly {
+    margin: 0 auto;
+    max-width: 60%;
+  }
+}
 html body #hourly #test-div-container {
   margin-bottom: 10px;
   display: flex;
 }
 html body #hourly #test-div-container #test-div {
-  margin: 0 15px;
+  flex: 1 0 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 html body #hourly #test-div-container #test-div:last-of-type {
   margin-right: 30px;
@@ -351,7 +289,6 @@ html body .hourly-header {
   z-index: 3;
   top: 0;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.5);
 }
 .real-menu {
   position: fixed;

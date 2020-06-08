@@ -28,16 +28,10 @@ async function fetchClick(city) {
 
 
 // Search Bar Click Event //
-const submitClick = document.querySelector('#submit').addEventListener('click', function () {
-    let city = document.querySelector("#weather-search").value;
-    fetchClick(city);
-});
-
 const submitKey = document.querySelector('#weather-search').addEventListener('keypress', function (e) {
     if (e.key == 'Enter') {
         let city = document.querySelector("#weather-search").value;
         fetchClick(city);
-
     }
 });
 // Search Bar Click Event End //
@@ -133,8 +127,6 @@ function init() {
     document.getElementById("close").addEventListener("click", toggleMenu);
     document.getElementById("create-acc").addEventListener("click", toggleMenu);
     document.getElementById("create-acc").addEventListener("click", signUp);
-    document.getElementById("login").addEventListener("click", toggleMenu);
-    document.getElementById("login").addEventListener("click", login);
 }
 
 //The actual fuction
@@ -161,21 +153,12 @@ const signUp = () => {
     const clicked = document.querySelector('.container-login');
     clicked.classList.remove('clicked');
 
-    document.querySelector('.container-login span i').addEventListener('click', function () {
+    document.querySelector('.container-login div i').addEventListener('click', function () {
         clicked.classList.add('clicked');
     });
-};
 
-const login = () => {
-    document.querySelector('.container-login h2').innerHTML = 'Login';
-    document.querySelector('.container-login p').style.display = 'none';
-    document.querySelector('.container-login button').innerHTML = 'Login';
-    const clicked = document.querySelector('.container-login');
-    clicked.classList.remove('clicked');
-
-    document.querySelector('.container-login span i').addEventListener('click', function () {
-        clicked.classList.add('clicked');
-    });
+    document.querySelector('.container-login h2').innerHTML = "Sign Up";
+    document.querySelector('.container-login button').innerHTML = "Create Account";
 };
 
 
@@ -190,13 +173,9 @@ document.getElementById("sign-up").addEventListener("click", function () {
         } else {
             // document.getElementById("validLogin").innerHTML = "Account Created!";
             document.querySelector('#sign-up').addEventListener('click', () => {
-                document.querySelector('#sign-up img').classList.remove('clicked');
-                setTimeout(function () {
-                    document.location.reload();
-                }, 3000);
                 setTimeout(function () {
                     document.getElementById("validLogin").innerHTML = "Account Created!";
-                }, 1000);
+                }, 2000);
             })
         }
     } else {

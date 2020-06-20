@@ -1,0 +1,324 @@
+html {
+  box-sizing: border-box;
+}
+html body {
+  margin: 0;
+  background: #10293b;
+  z-index: -100;
+  padding: 20px;
+}
+@media screen and (max-width: 767px) {
+  html body {
+    padding: 0px;
+  }
+}
+html body .container-login {
+  background-color: #ec6e4b;
+  color: white;
+  font-family: helvetica;
+  font-weight: 100;
+  text-align: center;
+}
+html body .container-login .close {
+  display: flex;
+  justify-content: flex-end;
+}
+html body .container-login .close i {
+  margin: 10px 10px 0 0;
+}
+@media screen and (min-width: 1200px) {
+  html body .container-login .close i {
+    margin: 30px 30px 0 0;
+  }
+}
+html body .container-login .wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1200px) {
+  html body .container-login .wrapper {
+    margin: 0 auto 50px auto;
+    width: 50%;
+  }
+}
+html body .container-login .wrapper h2 {
+  font-size: 40px;
+  margin: 20px;
+}
+html body .container-login .wrapper input {
+  display: block;
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto 10px auto;
+  border-radius: 10px;
+  outline-style: none;
+  outline: none;
+  border: none;
+  padding: 12px;
+  box-sizing: border-box;
+}
+html body .container-login .wrapper button {
+  background: transparent;
+  width: 80%;
+  color: #fefefe;
+  padding: 10px 12px;
+  font-family: helvetica;
+  font-size: 16px;
+  border-radius: 10px;
+  margin: 20px 0;
+  font-weight: 100;
+  text-transform: capitalize;
+  border: 2px solid white;
+  transition: all 0.3s ease-in-out;
+}
+html body .container-login .wrapper button:focus,
+html body .container-login .wrapper button:hover {
+  outline-style: none;
+  cursor: pointer;
+  background: white;
+  color: #ec6e4b;
+}
+html body .container-login .wrapper button span {
+  height: 20px;
+  width: 20px;
+  border-top-right-radius: 50%;
+  border: 1px solid #10293b;
+}
+html body .clicked {
+  display: none;
+}
+html body.menu-open #body-overlay {
+  display: block;
+}
+html body.menu-open .real-menu {
+  left: 0;
+  background: #ec6e4b;
+  color: white;
+  font-weight: 100;
+  display: flex;
+  flex-direction: column;
+}
+html body.menu-open .real-menu #close {
+  font-family: helvetica;
+  font-size: 40px;
+  margin-bottom: 50px;
+  display: inline-block;
+}
+html body.menu-open .real-menu .pages {
+  font-family: helvetica;
+  font-weight: 100;
+  padding: 20px 0;
+  font-size: 22px;
+  color: white;
+  border-bottom: 1px solid white;
+  cursor: pointer;
+}
+html body .header {
+  background-color: #10293b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 5px 15px;
+}
+@media screen and (min-width: 1200px) {
+  html body .header {
+    width: 62%;
+    margin: 0 auto;
+    padding: 15px 0;
+  }
+}
+html body .header .logo {
+  width: 50px;
+  margin-top: 5px;
+}
+html body .header .social i {
+  font-size: 30px;
+}
+html body .header a {
+  cursor: pointer;
+  text-decoration: none;
+}
+html body .header a i {
+  color: white;
+  font-size: 26px;
+}
+html body .header #open-menu {
+  color: white;
+  font-size: 26px;
+  background: none;
+  border: none;
+  padding: 0;
+  border-style: none;
+  cursor: pointer;
+}
+html body .header #open-menu:active,
+html body .header #open-menu:focus {
+  border-style: none;
+}
+html body .input-container {
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+}
+html body .input-container #submit-container {
+  background-color: transparent;
+}
+html body .input-container #submit-container #weather-search {
+  width: 240px;
+  height: 30px;
+  border: 2px solid #ec6e4b;
+  background: transparent;
+  color: #ec6e4b;
+  padding-left: 10px;
+  border-radius: 3px;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+html body .input-container #submit-container #weather-search:focus {
+  outline: none;
+  padding-left: 10px;
+}
+html body .input-container .input-container__icon {
+  background-color: skyblue;
+  padding: 0 10px;
+}
+html body .input-container .input-container__icon i {
+  line-height: 32px;
+}
+html body #current {
+  color: white;
+  font-family: helvetica;
+  font-weight: 100;
+  margin: 20px 15px 100px 15px;
+  padding: 20px;
+  border: 1px solid #ec6e4b;
+  border-radius: 10px;
+}
+@media screen and (min-width: 1200px) {
+  html body #current {
+    margin: 0 auto 100px auto;
+    max-width: 60%;
+  }
+}
+html body #current h2 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 36px;
+}
+html body #current h3 {
+  font-weight: 100;
+  font-size: 17px;
+  text-transform: capitalize;
+}
+html body #current .temp-container {
+  display: flex;
+  align-items: center;
+}
+html body #current .temp-container .temp {
+  font-size: 50px;
+  margin: 10px 0;
+  font-weight: 600;
+}
+html body #current .tile {
+  display: flex;
+  flex-wrap: wrap;
+  display: unset;
+}
+html body #current .tile div {
+  flex: 1 0 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  border-top: 1px solid white;
+  display: flex;
+  margin-top: 5px;
+  justify-content: space-between;
+  font-size: 22px;
+}
+html body #current .tile div span {
+  display: block;
+  font-size: 22px;
+}
+html body #hourly {
+  padding: 20px 20px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ec6e4b;
+  border-radius: 10px;
+  margin: 10px;
+  overflow: scroll;
+}
+@media screen and (min-width: 1200px) {
+  html body #hourly {
+    margin: 0 auto;
+    max-width: 60%;
+  }
+}
+html body #hourly #test-div-container {
+  margin-bottom: 10px;
+  display: flex;
+}
+html body #hourly #test-div-container #test-div {
+  flex: 1 0 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 1800px) {
+  html body #hourly #test-div-container #test-div {
+    flex: 1 0 20%;
+  }
+  html body #hourly #test-div-container #test-div .test-img {
+    width: 60px;
+  }
+  html body #hourly #test-div-container #test-div .test-div {
+    font-size: 20px!important;
+  }
+}
+html body #hourly #test-div-container #test-div:last-of-type {
+  margin-right: 30px;
+}
+html body #hourly #test-div-container #test-div .test-div {
+  color: white;
+  font-family: helvetica;
+  text-transform: capitalize;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  font-size: 16px;
+  font-weight: 100;
+}
+html body #hourly #test-div-container .test-img {
+  width: 50px;
+}
+html body .hourly-header {
+  color: white;
+  text-align: center;
+  font-family: helvetica;
+  font-size: 36px;
+  font-weight: 400;
+}
+#body-overlay {
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  overflow: hidden;
+}
+.real-menu {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  z-index: 4;
+  width: 300px;
+  height: 100%;
+  padding: 1.5rem;
+  box-shadow: 0 6px 12px rgba(107, 82, 82, 0.3);
+  background-color: white;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  transition: ease 0.2s all;
+}
